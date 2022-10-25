@@ -1,0 +1,82 @@
+.App {
+  text-align: center;
+  width: 100%;
+  margin: 2em auto 0;
+  nav {
+    margin: 2em auto 0;
+    display: flex;
+    justify-content: space-around;
+    width: 45%;
+
+    a {
+      color: rgb(9, 101, 182);
+    }
+    .img {
+      height: 2em;
+    }
+  }
+}
+
+.schedule {
+  // background: blue;
+  width: 90%;
+  margin: auto;
+  border: 2px solid black;
+  h1 {
+    color: rgb(197, 165, 123);
+  }
+
+  .day {
+    margin-bottom: 1.5em;
+    padding: 0;
+
+    .date {
+      // background: purple;
+      width: -webkit-max-content;
+      width: -moz-max-content;
+      width: max-content;
+      margin: 0 auto;
+    }
+    // background: blue;
+    .event-wrapper {
+      // background: red;
+      display: flex;
+      justify-content: center;
+      width: 50%;
+      margin: 0.5em auto 0;
+
+      .time {
+        margin-right: 0.35em;
+      }
+      .event {
+        // margin: 0 auto;
+      }
+    }
+  }
+}
+
+.newEventForm {
+  form {
+    display: flex;
+    flex-direction: column;
+    label {
+      // border: 5px solid black;
+    }
+    #date,
+    select {
+      width: 70%;
+      margin: auto;
+      text-align: center;
+      border-radius: 2em;
+      margin-bottom: 1em;
+      border: 2px solid rgb(9, 101, 182);
+    }
+  }
+
+  .actions {
+    // background-color: blue;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+  }
+}

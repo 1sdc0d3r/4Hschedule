@@ -1,38 +1,92 @@
 .App {
   text-align: center;
+  width: 100%;
+  margin: 2em auto 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App nav {
+  margin: 2em auto 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 45%;
 }
 
-.App-link {
-  color: #61dafb;
+.App nav a {
+  color: #0965b6;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App nav .img {
+  height: 2em;
 }
+
+.schedule {
+  width: 90%;
+  margin: auto;
+  border: 2px solid black;
+}
+
+.schedule h1 {
+  color: #c5a57b;
+}
+
+.schedule .day {
+  margin-bottom: 1.5em;
+  padding: 0;
+}
+
+.schedule .day .date {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.schedule .day .event-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50%;
+  margin: 0.5em auto 0;
+}
+
+.schedule .day .event-wrapper .time {
+  margin-right: 0.35em;
+}
+
+.newEventForm form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.newEventForm form #date,
+.newEventForm form select {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+  border-radius: 2em;
+  margin-bottom: 1em;
+  border: 2px solid #0965b6;
+}
+
+.newEventForm .actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: auto;
+}
+/*# sourceMappingURL=App.css.map */

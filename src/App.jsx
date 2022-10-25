@@ -3,38 +3,40 @@ import { useState, useEffect } from "react";
 import { Link, Routes, Route, useNavigate } from "react-router-dom";
 import Calendar from "./components/Calendar";
 import NewEventForm from "./components/NewEventForm";
+import navCalIcon from "./images/calendar-50.png";
+import navNewCalIcon from "./images/calendar-plus-50.png";
 
 function App() {
   const navigate = useNavigate();
   const [scheduleEvents, setScheduleEvents] = useState([
-    {
-      date: new Date("2022-09-09"),
-      farmHand: "Colten",
-      species: "Pigs",
-      chore: "Feeding/Watering",
-      complete: false,
-    },
-    {
-      date: new Date("2022-10-10"),
-      farmHand: "Cooper",
-      species: "Dogs",
-      chore: "Walk/Exercise",
-      complete: true,
-    },
-    {
-      date: new Date("2022-11-11"),
-      farmHand: "Daniel",
-      species: "Horses",
-      chore: "Feeding/Watering",
-      complete: false,
-    },
-    {
-      date: new Date("2022-12-12"),
-      farmHand: "Daniel",
-      species: "Dogs",
-      chore: "Feeding/Watering",
-      complete: true,
-    },
+    // {
+    //   date: new Date("2022-09-09"),
+    //   farmHand: "Colten",
+    //   species: "Pigs",
+    //   chore: "Feeding/Watering",
+    //   complete: false,
+    // },
+    // {
+    //   date: new Date("2022-10-10"),
+    //   farmHand: "Cooper",
+    //   species: "Dogs",
+    //   chore: "Walk/Exercise",
+    //   complete: true,
+    // },
+    // {
+    //   date: new Date("2022-11-11"),
+    //   farmHand: "Daniel",
+    //   species: "Horses",
+    //   chore: "Feeding/Watering",
+    //   complete: false,
+    // },
+    // {
+    //   date: new Date("2022-12-12"),
+    //   farmHand: "Daniel",
+    //   species: "Dogs",
+    //   chore: "Feeding/Watering",
+    //   complete: true,
+    // },
   ]);
   const [scheduleDays, setScheduleDays] = useState([]);
 
@@ -47,10 +49,10 @@ function App() {
         scheduleDays.push(strDate);
         console.log("date here", strDate);
       }
-      console.log(scheduleDays);
+      console.log({ scheduleDays });
     });
   }, []);
-  // console.log(scheduleEvents);
+  console.log({ scheduleEvents });
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -71,7 +73,7 @@ function App() {
     // console.log(strDate);
     if (!scheduleDays.includes(strDate))
       setScheduleDays([...scheduleDays, strDate]);
-    // return navigate("/"); //todo implement this
+    return navigate("/"); //todo implement this
   };
 
   const splitDateValues = (date) => {
@@ -102,7 +104,7 @@ function App() {
 
     const year = date.getFullYear();
     const month = date.getMonth();
-    const strMonth = months[month];
+    const strMonth = months[month + 1];
     const day = date.getDate();
     const strDay = days[date.getDay()];
     let hour = date.getHours();
@@ -114,14 +116,10 @@ function App() {
     // console.log({ year, month, day, hour, mins, strDay, strDate, strMonth });
     return { year, month, day, hour, mins, strDay, strDate, strMonth };
   };
-  console.log(scheduleDays);
+  // console.log(scheduleDays);
 
   return (
     <div className="App">
-      <nav>
-        <Link to="/">Calendar</Link>
-        <Link to="/event">New Event</Link>
-      </nav>
       <Routes>
         <Route
           path="/"
@@ -143,6 +141,16 @@ function App() {
           }
         />
       </Routes>
+      <nav>
+        <Link to="/">
+          <img src={navCalIcon} alt="Calendar" className="nav-cal" />
+          {/* calendarLogo */}
+        </Link>
+        <Link to="/event">
+          <img src={navNewCalIcon} alt="New Event" className="nav-new-event" />
+          {/* New Event */}
+        </Link>
+      </nav>
     </div>
   );
 }

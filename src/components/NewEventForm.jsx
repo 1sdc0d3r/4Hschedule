@@ -17,38 +17,55 @@ export default function NewEventForm(props) {
   return (
     <div className="newEventForm">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="day">Date</label>
+        {/* <label htmlFor="day">  */}
+        {/* Date */}
         <input
           type="datetime-local"
           name="date"
           id="date"
           defaultValue={defaultDateValue()}
         />{" "}
+        {/* </label>
         {/* default to today */}
-        <label htmlFor="farmHand">Farm Hand</label>
-        <select name="farmHand" id="farmHand">
+        {/* <label htmlFor="farmHand"> */}
+        {/* Farm Hand */}
+        <select name="farmHand" id="farmHand" defaultValue="farmhand">
+          <option value="farmhand" disabled>
+            Farmhand
+          </option>
           {eventFormOptions.farmHands.map((e, i) => (
             <option value={e} key={i}>
               {e}
             </option>
           ))}
         </select>
-        <label htmlFor="chore">Chore</label>
-        <select name="chore" id="chore">
+        {/* </label> */}
+        {/* <label htmlFor="chore"> */}
+        {/* Chore */}
+        <select name="chore" id="chore" defaultValue="chore">
+          <option value="chore" disabled>
+            Chores
+          </option>
           {eventFormOptions.chores.map((e, i) => (
             <option value={e} key={i}>
               {e}
             </option>
           ))}
         </select>
-        <label htmlFor="species">Species</label>
-        <select name="species" id="species">
+        {/* </label> */}
+        {/* <label htmlFor="species"> */}
+        {/* Species */}
+        <select name="species" id="species" defaultValue="species">
+          <option value="species" disabled>
+            Species
+          </option>
           {eventFormOptions.species.map((e, i) => (
             <option value={e} key={i}>
               {e}
             </option>
           ))}
         </select>
+        {/* </label> */}
         <div className="actions">
           <input type="reset" value="Reset Form" />
           <input name="submit" type="submit" />
