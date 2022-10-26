@@ -63,6 +63,10 @@ function App() {
     const farmHand = form.farmHand.value;
     const species = form.species.value;
     const chore = form.chore.value;
+    if (farmHand === "farmhand" || species === "species" || chore === "chore") {
+      console.log("HERE");
+      return;
+    }
     const newEvent = { date, farmHand, species, chore, complete: false };
     if (!scheduleEvents.includes(newEvent))
       //!todo this is not working properly. Duplicate data objects
